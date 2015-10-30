@@ -1,0 +1,27 @@
+
+<div class="container content">
+  <div class = "col-md-8 col-md-offset-2">
+    <div class="panel panel-default margin-bottom-20">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th class = "col-md-1 text-center">글번호</th>
+            <th class = "col-md-2 text-center">분류</th>
+            <th class = "col-md-10">제목</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%@posts.each do |p| %>
+            <tr>
+              <td class = "col-md-1 text-center"><%=p.id%></td>
+              <td class = "col-md-2 text-center"></td>
+              <td class = "col-md-10"><%=link_to p.title, post_path(p)%></td>
+            </tr>
+          <%end%>
+        </tbody>
+      </table>
+    </div>
+    <%= link_to '글쓰기', new_post_path, class: 'btn-u'%>
+  </div>
+</div>
+

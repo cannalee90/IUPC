@@ -66,11 +66,7 @@
               <!-- FAQ -->
               <li><%=link_to "FAQ", "/faq/main"%></li>
               <!-- Board -->
-              <li><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                    Q/A
-                  </a>
-              </li>
-
+              <li><%=link_to "Q&A", "/posts"%></li>
               <!-- Shortcodes -->
               <li class="dropdown mega-menu-fullwidth">
                   <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
@@ -80,7 +76,7 @@
               <!-- End Shortcodes -->
 
               <!-- Misc Pages -->
-              <li class="dropdown">
+              <li>
                   <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                       Practice
                   </a>
@@ -94,5 +90,22 @@
 
       <%= yield %>
     </div>
+    <!--=== Footer Version 1 ===-->
+    <div class="footer-v1">
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>
+                            2015 CTP &copy; All Rights Reserved.
+                           <!-- <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div><!--/copyright-->
+    </div>
+    <!--=== End Footer Version 1 ===-->
   </body>
+
 </html>
