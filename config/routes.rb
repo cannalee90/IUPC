@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'problem/A'
+
+  get 'problem/B'
+
+  get 'problem/C'
+
+  get 'problem/D'
+
   get 'register/new'
 
   get 'register/search'
