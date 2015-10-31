@@ -22,4 +22,11 @@
  *= require unify/plugins/line-icons/line-icons.css
  *= require unify/plugins/font-awesome/css/font-awesome.min.css
  */
-
+ pre.blog-body {
+  background-color: #fff;
+  color: #333;
+  text-indent: 0px;
+  padding: 10px;
+  font-size: 11pt;
+  border: 0px;
+}

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'register/new'
+
+  get 'register/search'
+
+  get 'register/result'
+
   resources :posts
   root 'main#index'
   get 'faq/main'
