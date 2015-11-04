@@ -1,0 +1,16 @@
+<div class="container content">
+  <div class = "row">
+    <div class = "col-md-8 col-md-offset-2">
+      <div class = "tag-box tag-box-v3">
+        <h1 class="blog-grid-title-lg"><%= @post.title %></h1>
+        <hr class="margin-bottom-20">
+        <pre class = "blog-body"><%= @post.content %></pre>
+        <hr class="margin-bottom-20">
+        <%= link_to '삭제',  @post, method: 'delete' , class: 'btn btn-default'%>
+        <%= link_to '수정', edit_post_path, class: 'btn btn-default'%>
+        <%= link_to '목록', posts_path, class: 'btn btn-default'%>
+      </div>
+    </div>
+  </div>
+</div>
+

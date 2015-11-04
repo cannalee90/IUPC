@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
+  get 'problem/A'
+  get 'problem/B'
+  get 'problem/C'
+  get 'problem/D'
+  get 'register/new'
+  get 'register/search'
+  get 'register/result'
+  resources :posts
   root 'main#index'
   get 'faq/main'
+  get 'posts/id'   => 'posts#destroy',  as: 'posts_delete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
