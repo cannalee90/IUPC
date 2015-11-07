@@ -4,12 +4,15 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.order(:id)
+    
+    @cnt = 0
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    
   end
 
   # GET /posts/new
@@ -30,10 +33,12 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, success: "게시물이 성공적으로 업로드 되었습니다."}
+        flash[:success] = "게시물이 성공적으로 업로드 되었습니다."
+        format.html { render :show}
       else
-        format.html { redirect_to :back }
-        format.json { render json: @post.errors, message: :unprocessable_entity }
+        flash[:error] = "부족한 곳을 채워주세요"
+        format.html { render :new}
+        format.json { render json: @post.errors }
       end
     end
   end
@@ -63,9 +68,10 @@ class PostsController < ApplicationController
         format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       end
     else
-      redirect_to :back
+      respond_to do |format|
+        format.html { redirect_to :back, error: '비밀번호가 일치하지 않습니다.' }
+      end
     end
-    
   end
 
   private

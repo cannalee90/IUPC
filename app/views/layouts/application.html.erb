@@ -48,22 +48,23 @@
               <!-- FAQ -->
               <li><%=link_to "FAQ", "/faq/main"%></li>
               <!-- Board -->
-              <li><%=link_to "Q&A", "/posts"%></li>
+              <li><%=link_to "공지사항", "/announces"%></li>
               <!-- Shortcodes -->
-              <li><%=link_to "REGISTER", "/register/new"%></li>
+              <li><%=link_to "등록하기", "/register/new"%></li>
+              <li><%=link_to "게시판", "/posts"%></li>
               <!-- End Shortcodes -->
 
               <!-- Misc Pages -->
               <li class = "dropdown">
                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                    Practice
+                    문제예시
                 </a>
                 <ul class="dropdown-menu">
                   <!-- Invoice Page -->
-                  <li><%=link_to "연습문제 A", "/problem/A" %></li>
-                  <li><%=link_to "연습문제 B", "/problem/B" %></li>
-                  <li><%=link_to "연습문제 C", "/problem/C" %></li>
-                  <li><%=link_to "연습문제 D", "/problem/D" %></li>
+                  <li><%=link_to "문제 A", "/problem/A" %></li>
+                  <li><%=link_to "문제 B", "/problem/B" %></li>
+                  <li><%=link_to "문제 C", "/problem/C" %></li>
+                  <li><%=link_to "문제 D", "/problem/D" %></li>
 
                   <!-- Sub Level Menu -->
                 </ul>
@@ -73,8 +74,9 @@
           </div><!--/end container-->
         </div><!--/navbar-collapse-->
       </div>
-      
-    <%= yield %>
+    <article>
+      <%= yield %>
+    </article
     <!--=== Footer Version 1 ===-->
       <div class="footer-v1">
         <div class="copyright">

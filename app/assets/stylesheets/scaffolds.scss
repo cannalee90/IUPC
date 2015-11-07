@@ -1,13 +1,11 @@
 body {
   background-color: #fff;
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
@@ -19,11 +17,8 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #666;
 
-  &:visited {
-    color: #666;
-  }
 
   &:hover {
     color: #fff;
@@ -37,6 +32,7 @@ div {
   }
 }
 
+
 #notice {
   color: green;
 }
@@ -45,6 +41,7 @@ div {
   padding: 2px;
   background-color: red;
   display: table;
+  width: 100%;
 }
 
 #error_explanation {

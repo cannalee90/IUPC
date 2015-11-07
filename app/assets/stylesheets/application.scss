@@ -21,15 +21,32 @@
  *= require unify/plugins/line-icons/line-icons.css
  *= require unify/plugins/font-awesome/css/font-awesome.min.css
  */
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
  pre.blog-body {
   background-color: #fff;
   color: #333;
   text-indent: 0px;
   padding: 10px;
-  font-size: 11pt;
+  font-size: 10pt;
   border: 0px;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
- a:hover {
+
+a:hover {
   background-color: inherit;
+}
+
+table > tr, th > th, td {
+ padding: 5px 15px;
+}
+
+
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+  width: 100%;
 }

@@ -1,0 +1,15 @@
+<div class="container content">
+  <div class = "row">
+    <div class = "col-md-8 col-md-offset-2">
+      <%= render partial: "shared/flash_messages", flash: flash %>
+      <div class = "tag-box tag-box-v3">
+        <h1 class="blog-grid-title-lg"><%= @announce.title %></h1>
+        <hr class="margin-bottom-20">
+        <pre class = "blog-body"><%= @announce.content %></pre>
+        <hr class="margin-bottom-20">
+        <%= link_to '목록', announces_path, class: 'btn btn-default'%>
+      </div>
+    </div>
+  </div>
+</div>
+

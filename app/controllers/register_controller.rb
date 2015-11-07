@@ -2,6 +2,7 @@ class RegisterController < ApplicationController
   #before_action :set_post, only: [:create]
   def new
     @team = Team.new
+    @tmp = 0
     3.times {@team.participants.build}    
   end
 
@@ -11,7 +12,9 @@ class RegisterController < ApplicationController
       if @team.save
         format.html { redirect_to root_path }
       else
-        format.html { redirect_to :back}
+        flash[:error] = "부족한 곳을 채워주세요"
+        format.html { render :new }
+        format.json { render json: @team.errors }
       end
     end
   end

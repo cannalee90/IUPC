@@ -1,0 +1,13 @@
+<h2 class="title-v4">Post a Comment</h2>
+    <%comment = @post.comments.new%>
+	<%=form_for([@post, comment]) do |f| %>
+    	<fieldset>
+          <div class="form-field">
+            <%= f.text_area :content, class: "form-control", placeholder: "내용",  size: "20x10" %>
+          </div>
+            <div class="actions">
+                <%= f.submit "글쓰기", class: "btn-u"%>
+            </div>
+    	</fieldset>
+	<%end%>
+</div>

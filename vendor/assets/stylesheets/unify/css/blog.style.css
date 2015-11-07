@@ -165,9 +165,15 @@ h1, h2, h3, h4, h5, h6 {
 ----------------------------------------------------*/
 
 .blog-comments-v2 {
-	padding: 0 20px;
-	margin-bottom: 30px;
+	
+	padding: 0 0 0 0px;
+	margin-bottom: 20px;
 }
+
+.blog-comments-v2 > p{
+	font-size : 9pt;
+}
+
 
 .blog-comments-v2 img {
 	float: left;
@@ -177,9 +183,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .blog-comments-v2 .comments-itself {
-	padding: 20px;
+	padding: 5px;
 	overflow: hidden;
-	background: #f7f7f7;
+	background: #fff;
 }
 
 .blog-comments-v2 .comments-itself h3 {
@@ -199,7 +205,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Comments Reply*/
 .blog-comments-v2.blog-comments-v2-reply {
-	margin-left: 30px;
+	margin-left: 0px;
+	margin-right: 0px;
 }
 
 /*Media Queries*/

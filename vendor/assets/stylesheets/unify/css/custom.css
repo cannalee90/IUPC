@@ -6,8 +6,12 @@
 * rgba(39, 215, 231, 1);
 */
 
+.register {
+	font-size: 9pt;
+}
 a {
-  color: #633896;
+  color: #666;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 a:focus, 
 a:hover, 
@@ -22,6 +26,16 @@ a.read-more:hover {
 }
 .linked:hover {
 	color:#633896;
+}
+p {
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 11pt;
+	line-height:2em
+}
+
+.btn-reply{
+    font-size: 8pt;
+    margin-left: 10px;
 }
 
 /* Headers Default

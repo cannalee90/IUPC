@@ -1,21 +1,27 @@
 <div class="container content">
   <div class="row"> 
     <div class = "col-md-8 col-md-offset-2">
+      <%= render partial: "shared/flash_messages", flash: flash %>
       <div class="panel panel-default margin-bottom-20">
-        <table class="table table-hover">
+        <table class="table table-hover post">
           <thead>
             <tr>
-              <th class = "col-md-1 text-center">글번호</th>
-              <th class = "col-md-2 text-center">분류</th>
-              <th class = "col-md-10">제목</th>
+              <th class = "col-md-1 text-center">번호</th>
+              <th class = "col-md-9 text-center">제목</th>
+              <th class = "col-md-2 text-center">등록일</th>
             </tr>
           </thead>
           <tbody>
-            <%@posts.each do |p| %>
+            <%@posts.reverse.each do |p| %>
               <tr>
-                <td class = "col-md-1 text-center"><%=p.id%></td>
-                <td class = "col-md-2 text-center"></td>
-                <td class = "col-md-10"><%=link_to p.title, post_path(p)%></td>
+                <%@cnt = @cnt + 1%>
+                <td class = "col-md-1 text-center"><%=@cnt%></td>
+                <td class = "col-md-9 "><%=link_to p.title, post_path(p)%>
+                  <%if p.comments.count > 0%>
+                    <button class = "btn btn-xs btn-success btn-reply">답변</button>
+                  <%end%>
+                </td>
+                <td class = "col-md-2 text-center"><%=  time_ago_in_words(p.updated_at)%> 전</td>
               </tr>
             <%end%>
           </tbody>

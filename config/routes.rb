@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :posts do
+    resources :comments, only: [:create, :destroy]
+  end
+  
+  devise_for :users
+  resources :announces
   get 'problem/A'
   get 'problem/B'
   get 'problem/C'
@@ -7,6 +13,7 @@ Rails.application.routes.draw do
   post 'register/create'
   get 'register/result'
   resources :posts
+
   get 'posts/get_pass/:id' => 'posts#get_pass',  as: 'posts_pass'
   root 'main#index'
   get 'faq/main'
@@ -46,8 +53,7 @@ Rails.application.routes.draw do
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
-  #     resources :comments
-  #     resources :sales do
+  #     #     resources :sales do
   #       get 'recent', on: :collection
   #     end
   #   end
