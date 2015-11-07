@@ -7,21 +7,36 @@
   <div class = "row">
     <div class = "col-md-8 col-md-offset-2">
       <div class = "tag-box tag-box-v3">
-        <div class="row promo-service">
-            <div class="col-md-12">
-                <div class = "headline">
-                    <h2>팀 등록하기</h2>
-                </div>
-                <ul class="list-unstyled margin-bottom-15">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+        <div class="row promo-service">          
+          <div class = "col-md-12">
+            <div class = "headline">
+              <h2>팀 등록하기</h2>
             </div>
+          </div> 
+          <%= form_for(@team, url: '/register/create', method: 'post', remote: true) do |f| %>
+            <div class = "col-md-12">
+              <div class="form-group">
+                <%= f.text_field :name, placeholder: "Team Name", class: "form-control" %>
+              </div>        
+            </div>
+            <%= f.fields_for :participants do |p|%>
+              <div class = "col-md-4">
+                <div class="form-group">
+                  <%= p.text_field :name, placeholder: "Name", class: "form-control" %>                 
+                  <%= p.text_field :email, placeholder: "Email", class: "form-control"%>
+                  <%= p.text_field :phone, placeholder: "Phone Number", class: "form-control" %>
+                  <%= p.text_field :sn, placeholder: "School Number", class: "form-control" %>
+                  <%= p.text_field :role, placeholder: "Role", class: "form-control" %>
+                </div>
+              </div>
+            <% end%>
+            <div class = "col-md-12">
+              <div class="form-action">
+                <%= f.submit "Register", class: "btn-u col-md-12" %>
+              </div>        
+            </div>
+          <% end %>
         </div>
-        <%= link_to '수정', new_post_path, class: 'btn btn-default'%>
-        <%= link_to '등록', new_post_path, class: 'btn btn-default'%>        
       </div>
     </div>
   </div>
