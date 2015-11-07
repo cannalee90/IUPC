@@ -4,12 +4,12 @@ Rails.application.routes.draw do
   get 'problem/C'
   get 'problem/D'
   get 'register/new'
-  get 'register/search'
+  post 'register/create'
   get 'register/result'
   resources :posts
+  get 'posts/get_pass/:id' => 'posts#get_pass',  as: 'posts_pass'
   root 'main#index'
   get 'faq/main'
-  get 'posts/id'   => 'posts#destroy',  as: 'posts_delete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

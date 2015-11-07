@@ -1,17 +1,7 @@
 <div class="container content">
   <div class = "col-md-8 col-md-offset-2">
-  
+    <%= render partial: "shared/flash_messages", flash: flash %>
     <%= form_for(@post) do |f| %>
-      <% if @post.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-          <ul>
-          <% @post.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
       <div class="form-group">
         <%= f.text_field :title, class: "form-control", placeholder: "제목" %>
       </div>
@@ -29,7 +19,7 @@
         <%= f.text_area :content, class: "form-control", placeholder: "내용",  size: "20x10" %>
       </div>
       <div class="actions">
-        <%= f.submit :submit, class: "btn-u"%>
+        <%= f.submit "글쓰기", class: "btn-u"%>
       </div>
     <% end %>
   </div>
