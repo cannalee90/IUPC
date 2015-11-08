@@ -1,11 +1,11 @@
 <h3 class="blog-v4">답변</h3>  
 <%@post.comments.each do |c| %>
     <div class="row blog-comments-v2 blog-comments-v2-reply">
-        <%if user_signed_in? %>
-            <span><%=link_to "삭제", post_comments(c) ,method: 'delete'%></span>
-        <%end%>
         <div class="comments-itself">
-            <p><%=c.content%></p>
+            <%if user_signed_in? and c.id? %>
+                <span><%=link_to "삭제하기", [c.post, c], method: 'delete'%></span>
+            <%end%>
+            <p><%=c.content%></p>            
         </div>
     </div>
 <%end%>
