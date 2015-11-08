@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'problem/D'
   get 'register/new'
   post 'register/create'
+  
   get 'register/result'
   resources :posts
 

@@ -10,9 +10,10 @@ class RegisterController < ApplicationController
     @team = Team.new(team_params)
     respond_to do |format|
       if @team.save
-        format.html { redirect_to root_path }
+        flash[:success] = "성공적으로 등록되었습니다."
+        format.html { redirect_to '/register/new' }
       else
-        flash[:error] = "부족한 곳을 채워주세요"
+        flash[:error] = "잘못된 곳을 확인해주세요"
         format.html { render :new }
         format.json { render json: @team.errors }
       end
