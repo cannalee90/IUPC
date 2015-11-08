@@ -39,14 +39,18 @@
                   <%= p.email_field :email, placeholder: "이메일을 입력하세요", class: "form-control register"%>
                 </div>
                 <div class="form-group">
-                  <%= p.text_field :phone, placeholder: "전화번호를 입력하세요(숫자만)", class: "form-control register" %>
+                  <%= p.text_field :phone, placeholder: "핸드폰 번호를 입력하세요(숫자만)", class: "form-control register" %>
                 </div>
                 <div class="form-group">
                   <%= p.text_field :sn, placeholder: "학번을 입력하세요", class: "form-control register" %>
                 </div>
                 <div class="form-group">
-                  <%= p.select(:role, [["전기공학과"], ["전자공학과"], ["컴퓨터정보공학과"], ["정보통신공학과"]], {}, { :class => 'form-control'} )%>
+                  <%= p.select(:role, [["전공"], ["부전공"], ["복수전공"]], {}, { :class => 'form-control'} )%>
                 </div>
+                <div class="form-group">
+                  <%= p.select(:major, [["전기공학과"], ["전자공학과"], ["컴퓨터정보공학과"], ["정보통신공학과"]], {}, { :class => 'form-control'} )%>
+                </div>
+                
               </div>
             <% end%>
             <div class = "col-md-12">
@@ -60,8 +64,3 @@
     </div>
   </div>
 </div>
-
-순위는 아래와 같은 우선순위로 결정됩니다.
-가. 해결한 문제가 많은 순서
-나. 패널티의 총 합이 적은 순서 (줄바꿈)
-(문제 별 패널티 = 대회 시작부터 문제를 해결하기까지 걸린 시간(분) + 틀린 횟수*20)

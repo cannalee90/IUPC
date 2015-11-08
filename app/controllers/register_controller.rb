@@ -27,6 +27,6 @@ class RegisterController < ApplicationController
 
   private
     def team_params
-      params.require(:team).permit(:name, participants_attributes: [:id, :name, :email, :phone, :sn, :role])
+      params.require(:team).permit(:name, participants_attributes: [:id, :name, :email, :phone, :sn, :role, :major])
     end
 end
