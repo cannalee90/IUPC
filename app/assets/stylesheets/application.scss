@@ -27,6 +27,9 @@
  *= require unify/plugins/font-awesome/css/font-awesome.min.css
  */
 @import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 
  pre.blog-body {
   background-color: #fff;
