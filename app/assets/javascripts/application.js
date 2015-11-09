@@ -24,7 +24,7 @@
 //= require unify/js/custom.js
 //= require unify/js/app.js
 //= require unify/js/plugins/layer-slider.js
-
+//= require summernote
 
 
 

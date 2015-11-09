@@ -16,6 +16,10 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'font-awesome-sass', '~> 4.4.0'
 
+
+# This is the right gem to use summernote editor in Rails projects.
+gem 'summernote-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
