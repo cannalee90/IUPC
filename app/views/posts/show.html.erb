@@ -9,14 +9,14 @@
         <%= link_to '삭제', posts_pass_path(@post),  class: 'btn btn-default'%>
         <%= link_to '수정', edit_post_path(@post), class: 'btn btn-default'%>
         <%= link_to '목록', posts_path, class: 'btn btn-default'%>
-        <%if user_signed_in? %>
-          <div class = "margin-bottom-20"></div>
-          <%= render partial: "shared/new_comment" %>
-        <%end%>
         <%if @post.comments.count > 0 %>
           <div class = "margin-bottom-20"></div>
           <%= render partial: "shared/comment" %>
         <%end%>  
+        <%if user_signed_in? %>
+          <div class = "margin-bottom-20"></div>
+          <%= render partial: "shared/new_comment" %>
+        <%end%>
       </div>
     </div>
   </div>
