@@ -1,6 +1,6 @@
 class AnnouncesController < ApplicationController
   before_action :set_announce, only: [:show, :edit, :update, :destroy]
-  #before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :create]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :create]
   # GET /announces
   # GET /announces.json
   def index

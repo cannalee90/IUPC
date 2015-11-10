@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#"><%=t.name%></a>
+    </h4>
+    </div>
+    <div id="" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <p>a
+          <table class="table table-hover post">
+            <tbody>
+              <%t.participants.each do |p| %>
+                <tr>
+                  <td class = "text-center"><%=p.name%></td>
+                  <td class = "text-center"><%=p.email%></td>
+                  <td class = "text-center"><%=p.phone%></td>
+                  <td class = "text-center"><%=p.sn%></td>
+                  <td class = "text-center"><%=p.role%></td>
+                </tr>
+              <%end%>
+            </tbody>
+        </table>
+        </p>
+      </div>
+    </div>
+</div>

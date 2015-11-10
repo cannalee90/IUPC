@@ -1,0 +1,41 @@
+    <!--=== Content Part ===-->
+    <div class="container content">
+        <div class="row">
+    
+<div class="col-md-10 col-md-offset-1">
+<!-- General Questions -->
+<div class="headline"><h2>Team List 현재 <%=@teams.count%>의 팀이 등록되어 있습니다.</h2></div>
+  <div class="panel-group acc-v1 margin-bottom-40" id="accordion">
+    <%@teams.each do|t| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapse<%=t.id%>"><%=t.name%></a>
+          </h4>
+        </div>
+        <div id="collapse<%=t.id%>" class="panel-collapse collapse">
+          <div class="panel-body">
+            
+              <table class="table table-hover post">
+                <tbody>
+                  <%t.participants.each do |p| %>
+                    <tr>
+                      <td class = "text-center"><%=p.name%></td>
+                      <td class = "text-center"><%=p.email%></td>
+                      <td class = "text-center"><%=p.phone%></td>
+                      <td class = "text-center"><%=p.sn%></td>
+                      <td class = "text-center"><%=p.role%></td>
+                    </tr>
+                  <%end%>
+                </tbody>
+              </table>
+            
+          </div>
+        </div>
+      </div>
+    <%end%>
+  </div><!--/acc-v1-->
+  <!-- End General Questions -->
+</div><!--/col-md-9-->
+
+

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'teamlist/index'
+
   resources :posts do
     resources :comments, only: [:create, :destroy]
   end
