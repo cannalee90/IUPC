@@ -1,0 +1,16 @@
+<div class="container content">
+  <div class = "col-md-8 col-md-offset-2">
+    <%= render partial: "shared/flash_messages", flash: flash %>
+    <%= form_for(@message, url: '/teamlist/create', method: 'post') do |f| %>
+      <div class="form-group">
+        <%= f.text_field :title, class: "form-control", placeholder: "제목" %>
+      </div>
+      <div class="field">
+        <%= f.text_area :content, class: "form-control", placeholder: "내용",  size: "20x10" %>
+      </div>
+      <div class="actions">
+        <%= f.submit "글쓰기", class: "btn-u"%>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,23 +1,30 @@
 Rails.application.routes.draw do
   get 'teamlist/index'
-
   resources :posts do
     resources :comments, only: [:create, :destroy]
   end
   
   devise_for :users
   resources :announces
+  resources :posts
+  get 'posts/get_pass/:id' => 'posts#get_pass',  as: 'posts_pass'
+
   get 'problem/A'
   get 'problem/B'
   get 'problem/C'
   get 'problem/D'
+  
   get 'register/new'
   post 'register/create'
-  
   get 'register/result'
-  resources :posts
-
-  get 'posts/get_pass/:id' => 'posts#get_pass',  as: 'posts_pass'
+  
+  get 'teamlist/new'
+  post 'teamlist/create'
+  get 'teamlist/sendtest'
+  get 'teamlist/selectmessage'
+  get 'teamlist/selectsender'
+  post 'teamlist/sendmessage'
+  
   root 'main#index'
   get 'faq/main'
 

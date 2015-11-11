@@ -1,0 +1,38 @@
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <%= render partial: "shared/flash_messages", flash: flash %>
+      <div class="headline"><h2>메세지를 보낼 참가자를 선택해 주세요. 현재 남은 메세지는 <%= get_balance().to_i / 20 %>개 입니다. </h2></div>
+      <table class="table table-hover post">
+        <thead>
+          <%= form_tag(:action => "sendmessage") do %>
+            <div class="form-group">
+              <%= collection_select(:message_id, :id, Message.all, :id, :title, {},{ :class => 'form-control'}) %>
+            </div>
+            <tr>
+              <td class = "col-md-2 text-center"><strong>이름</strong></td>
+              <td class = "col-md-8 text-center"></td>
+              <td class = "col-md-1 text-center"><%= check_box_tag("checkAll","checkAll") %></td>
+            </tr>
+        </thead>
+        <tbody>
+          
+            <%@participants.each do |p| %>
+              <tr>
+                <td class = "col-md-2 text-center"><%=p.name%></td>
+                <td class = "col-md-9 text-center"></td>
+                <td class = "col-md-1 text-center">  <%= check_box_tag("list[]",p.id) %></td>
+              </tr>
+            <%end%>
+            <div class = "form-group ">
+              <%= submit_tag("보내기", class: "btn-u col-md-12 margin-bottom-20") %>  
+            </div>
+          <% end %>        
+        </tbody>
+      </table>
+    </div>
+  </div><!--/acc-v1-->
+</div><!--/col-md-9-->
+
+
