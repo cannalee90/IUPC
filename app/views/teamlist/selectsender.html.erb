@@ -21,8 +21,14 @@
             <%@participants.each do |p| %>
               <tr>
                 <td class = "col-md-2 text-center"><%=p.name%></td>
-                <td class = "col-md-9 text-center"></td>
-                <td class = "col-md-1 text-center">  <%= check_box_tag("list[]",p.id) %></td>
+                <td class = "col-md-9 text-left">
+                  <%@ret_hash.each do |hash|%>
+                    <%if hash["recipient_number"] == p.phone%>
+                      <button class = 'btn btn-xs btn-<%=bootstrap_class_sms(hash["result_code"])%>'> <%=hash["result_message"]%></button>
+                    <%end%>
+                  <%end%>
+                </td>
+                <td class = "col-md-1 text-center"><%= check_box_tag("list[]",p.id) %></td>
               </tr>
             <%end%>
             <div class = "form-group ">

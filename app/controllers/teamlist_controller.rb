@@ -23,10 +23,17 @@ class TeamlistController < ApplicationController
     end      
   end
   
+  def sendtest
+  end
+  
+  def testing
+  end
+  
   def sendmessage
     @receiverlist = params[:list] || []
     @participants = Participant.all
     @message = Message.find(params[:message_id][:id])
+    
     
     if(send_status() > @receiverlist.count)
       @receiverlist.each do |receiver|  
@@ -43,7 +50,10 @@ class TeamlistController < ApplicationController
   
 
   def selectsender
-   @participants = Participant.all
+    @participants = Participant.all
+    cool_sent = Coolsms::SMS::Sent.new(count: "100000")
+    @ret_hash = Hash.new
+    @ret_hash = cool_sent.sent[:message]["data"]
   end
   
 private
