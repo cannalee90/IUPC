@@ -13,8 +13,7 @@
           <tbody>
             <%@announces.reverse.each do |p| %>
               <tr>
-                <%@cnt = @cnt + 1%>
-                <td class = "col-md-1 text-center"><%=@cnt%></td>
+                <td class = "col-md-1 text-center"><%=p.id%></td>
                 <td class = "col-md-9 "><%=link_to p.title, announce_path(p)%></td>
                 <td class = "col-md-2 text-center"><%=  time_ago_in_words(p.updated_at)%> 전</td>
               </tr>

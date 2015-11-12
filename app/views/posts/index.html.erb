@@ -14,8 +14,7 @@
           <tbody>
             <%@posts.reverse.each do |p| %>
               <tr>
-                <%@cnt = @cnt + 1%>
-                <td class = "col-md-1 text-center"><%=@cnt%></td>
+                <td class = "col-md-1 text-center"><%=p.id%></td>
                 <td class = "col-md-9 "><%=link_to p.title, post_path(p)%>
                   <%if p.comments.count > 0%>
                     <button class = "btn btn-xs btn-success btn-reply">답변</button>
