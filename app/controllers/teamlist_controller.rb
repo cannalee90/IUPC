@@ -16,7 +16,6 @@ class TeamlistController < ApplicationController
         flash[:success] = "문자가 성공적으로 저장되었습니다."
         format.html { redirect_to '/teamlist/index'}
       else
-        flash[:error] = "문자가 너무 길어요 80byte 이내여야 합니다."
         format.html { render :new}
         format.json { render json: @post.errors }
       end
@@ -24,6 +23,7 @@ class TeamlistController < ApplicationController
   end
   
   def sendtest
+
   end
   
   def testing
@@ -31,7 +31,7 @@ class TeamlistController < ApplicationController
   
   def sendmessage
     @receiverlist = params[:list] || []
-    @participants = Participant.all
+    @participants = Participant.allS
     @message = Message.find(params[:message_id][:id])
     
     
@@ -63,7 +63,7 @@ private
   
   def send_status()
     coolsms_balance = Coolsms::SMS::Balance.new
-    coolsms_balance.balance[:message]["cash"].to_i / 20
+    coolsms_balance.balance[:message]["cash"].to_i / 40
   end  
   
   def send_sms(content, receiver)
