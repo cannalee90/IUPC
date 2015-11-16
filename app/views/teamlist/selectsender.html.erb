@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <%= render partial: "shared/flash_messages", flash: flash %>
-      <div class="headline"><h2>메세지를 보낼 참가자를 선택해 주세요. 현재 남은 메세지는 <%= get_balance().to_i / 20 %>개 입니다. </h2></div>
+      <div class="headline"><h2>메세지를 보낼 참가자를 선택해 주세요. 현재 남은 돈은 <%= get_balance()%>입니다. </h2></div>
       <table class="table table-hover post">
         <thead>
           <%= form_tag(:action => "sendmessage") do %>
@@ -18,8 +18,8 @@
         <tbody>  
           <%@participants.each do |p| %>
             <tr>
-              <td class = "col-md-2 text-center"><%=p.name%></td>
-              <td class = "col-md-9 text-left">
+              <td class = "col-md-3 text-center"><%=p.name%> : <%=Team.find(p.team_id).name %></td>
+              <td class = "col-md-8 text-left">
                 <%@ret_hash.each do |hash|%>
                   <%if hash["recipient_number"] == p.phone%>
                     <button class = 'btn btn-xs btn-<%=bootstrap_class_sms(hash["result_code"])%>' title = "<%=hash["text"]%>"> <%=hash["result_message"]%></button>

@@ -31,7 +31,7 @@ class TeamlistController < ApplicationController
   
   def sendmessage
     @receiverlist = params[:list] || []
-    @participants = Participant.allS
+    @participants = Participant.all
     @message = Message.find(params[:message_id][:id])
     
     
