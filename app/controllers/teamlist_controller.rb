@@ -34,7 +34,6 @@ class TeamlistController < ApplicationController
     @participants = Participant.all
     @message = Message.find(params[:message_id][:id])
     
-    
     if(send_status() > @receiverlist.count)
       @receiverlist.each do |receiver|  
         puts send_sms(@message.content, @participants.find(receiver).phone) 
@@ -67,7 +66,7 @@ private
   end  
   
   def send_sms(content, receiver)
-    coolsend = Coolsms::SMS::Send.new( {} )
+    coolsend = Coolsms::SMS::Send.new( { type: "LMS", subject: "IUPC 운영진입니다."} )
     coolsend.send("01026772637", receiver, content)
   end  
   
