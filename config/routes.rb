@@ -27,6 +27,10 @@ Rails.application.routes.draw do
   
   root 'main#index'
   get 'faq/main'
+  
+  scope module: 'teamlist' do
+    resources :messages
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

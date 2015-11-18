@@ -9,6 +9,7 @@ class TeamlistController < ApplicationController
     @message = Message.new
   end
   
+  
   def create
     @message = Message.new(messages_params)
     respond_to do |format|

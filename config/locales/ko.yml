@@ -64,18 +64,18 @@ ko:
         one: "일 년"
         other: "%{count}년"
       almost_x_years:
-        one: "일 년 이하"
-        other: "%{count}년 이하"
+        one: "일 년"
+        other: "%{count}년"
       half_a_minute: "30초"
       less_than_x_minutes:
-        one: "일 분 이하"
-        other: "%{count}분 이하"
+        one: "일 분"
+        other: "%{count}분"
       less_than_x_seconds:
-        one: "일 초 이하"
-        other: "%{count}초 이하"
+        one: "일 초"
+        other: "%{count}초"
       over_x_years:
-        one: "일 년 이상"
-        other: "%{count}년 이상"
+        one: "일 년"
+        other: "%{count}년"
       x_days:
         one: "하루"
         other: "%{count}일"

@@ -12,13 +12,10 @@
             </tr>
           </thead>
           <tbody>
-            <%@posts.reverse.each do |p| %>
+            <%@message.reverse.each do |p| %>
               <tr>
                 <td class = "col-md-1 text-center"><%=p.id%></td>
-                <td class = "col-md-9 "><%=link_to p.title, post_path(p)%>
-                  <%if p.comments.count > 0%>
-                    <button class = "btn btn-xs btn-success btn-reply">답변</button>
-                  <%end%>
+                <td class = "col-md-9 "><%=link_to p.title, message_path(p)%>
                 </td>
                 <td class = "col-md-2 text-center"><%=  time_ago_in_words(p.created_at)%> 전</td>
               </tr>
@@ -26,7 +23,7 @@
           </tbody>
         </table>
       </div>
-      <%= link_to '글쓰기', new_post_path, class: 'btn-u'%>
+      <%= link_to '글쓰기', new_message_path, class: 'btn-u'%>
     </div>
   </div>
 </div>
