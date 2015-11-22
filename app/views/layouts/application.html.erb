@@ -59,7 +59,7 @@
               <!-- Board -->
               <li><%=link_to "공지사항", "/announces"%></li>
               <!-- Shortcodes -->
-              <li><%=link_to "등록하기", "/register/new"%></li>
+              <li><a href="javascript:popupOpen();" >등록하기</a></li>
               <li><%=link_to "게시판", "/posts"%></li>
               <!-- End Shortcodes -->
 
@@ -105,3 +105,9 @@
     <!--=== End Footer Version 1 ===-->
   </body>
 </html>
+<script type="text/javascript">
+function popupOpen(){
+		alert("등록이 마감되었습니다");
+	}
+</script>
+

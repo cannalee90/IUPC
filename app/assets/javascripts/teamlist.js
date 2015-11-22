@@ -4,7 +4,11 @@ $(document).ready(function() {
         $("input:checkbox").prop('checked', $(this).prop("checked"));
     });
     $("input").change(function () {
-        $("span#checkedReceiver").text($("input:checked").size());
+        var ret = $("input:checked").size();
+        if($("#checkAll:checked").prop("checked"))
+            ret = ret - 1;
+        $("span#checkedReceiver").text(ret);
+        
     });
     
 });
