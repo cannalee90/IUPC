@@ -1,5 +1,7 @@
 class RegisterController < ApplicationController
   #before_action :set_post, only: [:create]
+  before_action :authenticate_user!
+  
   def new
     @team = Team.new
     @tmp = 0
