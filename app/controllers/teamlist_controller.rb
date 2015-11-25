@@ -9,6 +9,10 @@ class TeamlistController < ApplicationController
     @message = Message.new
   end
   
+  def table
+    @teams = Team.all
+  end
+  
   
   def create
     @message = Message.new(messages_params)

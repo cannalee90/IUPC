@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   get 'teamlist/selectmessage'
   get 'teamlist/selectsender'
   post 'teamlist/sendmessage'
+  get 'teamlist/table'
+  
   
   root 'main#index'
   get 'faq/main'

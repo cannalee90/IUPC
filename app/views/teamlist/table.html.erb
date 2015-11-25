@@ -1,0 +1,34 @@
+<div class="container content">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table class="table table-hover post">
+        <thead>
+          <tr>
+            <td class = "col-md-2 text-center">팀</td>
+            <td class = "col-md-2 text-center">이름</td>
+            <td class = "col-md-2 text-center">폰</td>
+            <td class = "col-md-2 text-center">학번</td>
+            <td class = "col-md-2 text-center">전공</td>
+            <td class = "col-md-2 text-center">상태</td>
+          </tr>
+        </thead>
+        <tbody>  
+          <%@teams.each do |t| %>
+            <%t.participants.each do |p|%>
+              <tr>
+                <td class = "col-md-2 text-center"><%=t.name%></td>
+                <td class = "col-md-2 text-center"><%=p.name%></td>
+                <td class = "col-md-2 text-center"><%=p.phone%></td>
+                <td class = "col-md-2 text-center"><%=p.sn%></td>
+                <td class = "col-md-2 text-center"><%=p.major%></td>
+                <td class = "col-md-2 text-center"><%=p.role%></td>
+              </tr>
+            <%end%>
+          <% end %>        
+        </tbody>
+      </table>
+    </div>
+  </div><!--/acc-v1-->
+</div><!--/col-md-9-->
+
+
