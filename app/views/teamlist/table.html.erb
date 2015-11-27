@@ -5,11 +5,14 @@
         <thead>
           <tr>
             <td class = "col-md-2 text-center">팀</td>
-            <td class = "col-md-2 text-center">이름</td>
+            <td class = "col-md-1 text-center">이름</td>
             <td class = "col-md-2 text-center">폰</td>
             <td class = "col-md-2 text-center">학번</td>
             <td class = "col-md-2 text-center">전공</td>
-            <td class = "col-md-2 text-center">상태</td>
+            <td class = "col-md-1 text-center">상태</td>
+            <td class = "col-md-2 text-center">메일</td>
+            
+            
           </tr>
         </thead>
         <tbody>  
@@ -22,6 +25,8 @@
                 <td class = "col-md-2 text-center"><%=p.sn%></td>
                 <td class = "col-md-2 text-center"><%=p.major%></td>
                 <td class = "col-md-2 text-center"><%=p.role%></td>
+                <td class = "col-md-2 text-center"><%=p.email%></td>
+                
               </tr>
             <%end%>
           <% end %>        
