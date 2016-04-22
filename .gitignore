@@ -18,5 +18,8 @@
 
 # Ignore application configuration
 /config/application.yml
+/config/database.yml
+/config/deploy/staging.rb
+/config/deploy.rb
 
 /spring/*.pid

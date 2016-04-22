@@ -12,7 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require unify/plugins/bootstrap/css/bootstrap.min.css
  *= require unify/css/style.css
  *= require unify/css/app.css
  *= require unify/css/ie8.css
@@ -21,10 +20,13 @@
  *= require unify/css/plugins/style-switcher.css
  *= require unify/css/headers/header-default.css
  *= require unify/css/footers/footer-v1.css
- *= require unify/css/custom.css 
+ *= require unify/css/custom.css
  *= require unify/plugins/animate.css
+
  *= require unify/plugins/line-icons/line-icons.css
  *= require unify/plugins/font-awesome/css/font-awesome.min.css
+ *= require unify/plugins/bootstrap/css/bootstrap.min.css
+
  */
 @import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 @import "font-awesome-sprockets";
@@ -32,31 +34,31 @@
 @import "summernote";
 @import "announces";
 
- pre.blog-body {
-  background-color: #fff;
-  color: #333;
-  text-indent: 0px;
-  padding: 10px;
-  font-size: 11pt;
-  border: 0px;
-  line-height: 2em;
-  font-family: 'Nanum Gothic', sans-serif;
+pre.blog-body {
+ background-color: #fff;
+ color: #333;
+ text-indent: 0px;
+ padding: 10px;
+ font-size: 11pt;
+ border: 0px;
+ line-height: 2em;
+ font-family: 'Nanum Gothic', sans-serif;
 }
 
 
 a:hover {
-  background-color: inherit;
+ background-color: inherit;
 }
 
 table > tr, th > th, td {
- padding: 5px 15px;
+padding: 5px 15px;
 }
 
 
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-  width: 100%;
+ padding: 2px;
+ background-color: red;
+ display: table;
+ width: 100%;
 }
