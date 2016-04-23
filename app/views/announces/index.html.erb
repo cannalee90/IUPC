@@ -2,19 +2,24 @@
 <div class="container content">
   <div class="row">
     <div class = "col-md-8 col-md-offset-2">
+      <%= render partial: "shared/flash_messages", flash: flash %>
       <div class="panel panel-default margin-bottom-20">
         <table class="table table-hover post">
           <thead>
             <tr>
-              <th class = "col-md-9 text-center">제목</th>
+              <th class = "col-md-8 col-sm-10 col-xs-8 text-center">제목</th>
+              <th class = "col-md-2 col-sm-2  col-xs-4 text-center">글쓴이</th>
               <th class = "col-md-2 hidden-sm text-center">등록일</th>
             </tr>
           </thead>
           <tbody>
             <%@announces.reverse.each do |announce| %>
               <tr>
-                <td class = "col-md-9 ">
+                <td class = "col-md-8 col-sm-10 col-xs-8">
                   <%= link_to announce.title, announce_path(announce) %>
+                </td>
+                <td class = "col-md-2 col-sm-2 col-xs-4 text-center">
+                  <%= link_to announce.name, announce_path(announce) %>
                 </td>
                 <td class = "col-md-2 hidden-sm text-center">
                   <%= announce.created_at.strftime("%m-%d") %>
@@ -24,6 +29,7 @@
           </tbody>
         </table>
       </div>
+      <%= link_to "글쓰기", new_announce_path, class: "btn-u" %>
     </div>
   </div>
 </div>

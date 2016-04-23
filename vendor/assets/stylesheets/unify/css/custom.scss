@@ -17,6 +17,16 @@
 body {
     font-family: "Nanum Gothic", sans-serif;
 }
+.blog {
+  h2 {
+    margin-top: 0px;
+    font-size: 20pt;
+  }
+}
+
+.blog-post-tags li {
+  font-size: 10pt
+}
 
 .search-block {
 	padding: 80px 0;
@@ -123,15 +133,7 @@ pre.problem-ex {
 }
 
 
-pre.blog-body {
- background-color: #fff;
- color: #333;
- text-indent: 0px;
- padding: 10px;
- font-size: 11pt;
- border: 0px;
- line-height: 2em;
-}
+
 
 
 a:hover {
@@ -169,8 +171,8 @@ a.read-more:hover {
 }
 p {
 	font-family: 'Nanum Gothic', sans-serif;
-	font-size: 11pt;
-	line-height:2em
+	font-size: 10pt;
+	line-height:3.0em
 }
 
 .btn-reply{
@@ -824,8 +826,10 @@ blockquote.hero.hero-default:hover {
 ul.blog-tags a:hover {
 	background: #633896;
 }
-.blog-post-tags ul.blog-tags a:hover {
+.blog-post-tags ul.blog-tags a:hover li{
   background:  #633896;
+  font-size: 20pt;
+
 }
 
 /* Blog Photos */

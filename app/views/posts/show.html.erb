@@ -1,28 +1,23 @@
-<%= render partial: 'shared/breadcrum', locals: {menu: "게시판"} %>
 <div class="container content">
   <div class="row">
     <div class = "col-md-8 col-md-offset-2">
       <%= render partial: "shared/flash_messages", flash: flash %>
+        <div class="blog margin-bottom-40">
+        	<h2><a href="#"><%= @post.title %></a></h2>
+        	<div class="blog-post-tags">
+        		<ul class="list-unstyled list-inline blog-info">
+        			<li><i class="fa fa-calendar"></i> <%= @post.created_at.strftime("%Y %B %m ") %></li>
+        			<li><i class="fa fa-pencil"></i> <%=@post.name %></li>
+        		</ul>
+        	</div>
+          <%= simple_format(@post.content.html_safe) %>
+          <hr class= "margin-bottom-20">
+          <%= link_to '목록', posts_path, class: "btn-u" %>
+          <button type="button" class="btn-u" data-toggle ="modal" data-target = ".bs-modify-modal-sm">수정</button>
+          <button type="button" class="btn-u" data-toggle ="modal" data-target = ".bs-destroy-modal-sm">삭제</button>
 
-      <div class="panel-group acc-v1 margin-bottom-40">
-        <div class="panel panel-default post-panel">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <span class="accordion-toggle">
-                <%= @post.title %>
-              </span>
-            </h4>
-          </div>
-          <div class="panel-collapse collapse in">
-            <div class="panel-body post-body">
-              <%= simple_format(@post.content.html_safe) %>
-            </div>
-          </div>
         </div>
       </div>
-      <%= link_to '목록', posts_path, class: "btn-u" %>
-      <button type="button" class="btn-u" data-toggle ="modal" data-target = ".bs-modify-modal-sm">수정</button>
-      <button type="button" class="btn-u" data-toggle ="modal" data-target = ".bs-destroy-modal-sm">삭제</button>
     </div>
   </div>
 </div>
