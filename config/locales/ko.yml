@@ -1,4 +1,22 @@
 ko:
+  activerecord:
+    models:
+      team: 팀
+      participant: 참가자
+      post: 게시글
+      announce: 문제
+    attributes:
+      team:
+        name: 팀이름
+      team/participants:
+        email: 이메일
+        name: 참가자
+        sn: 학번
+        phone: 핸드폰번호
+    errors:
+      headline: 팀원 등록에 문제가 있습니다
+      messages:
+        record_invalid: 데이터 검증에 실패하였습니다. %{errors}
   date:
     abbr_day_names:
     - 일
@@ -9,7 +27,7 @@ ko:
     - 금
     - 토
     abbr_month_names:
-    - 
+    -
     - 1월
     - 2월
     - 3월
@@ -35,7 +53,7 @@ ko:
       long: "%Y년 %m월 %d일 (%a)"
       short: "%m/%d"
     month_names:
-    - 
+    -
     - 1월
     - 2월
     - 3월

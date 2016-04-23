@@ -13,19 +13,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
-
 gem 'font-awesome-sass', '~> 4.4.0'
-
-
 # This is the right gem to use summernote editor in Rails projects.
 gem 'summernote-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
@@ -35,7 +28,7 @@ gem 'coolsms'
 
 gem 'figaro'
 
-#
+gem 'mysql2', '~> 0.3.18'
 gem 'devise'
 # Use Unicorn as the app server
 # gem 'unicorn'

@@ -1,29 +1,20 @@
 class RegisterController < ApplicationController
-  
+
   def new
     @team = Team.new
-    @tmp = 0
-    3.times {@team.participants.build}
+    3.times { @team.participants.build }
   end
 
   def create
     @team = Team.new(team_params)
-    respond_to do |format|
-      if @team.save
-        flash[:success] = "성공적으로 등록되었습니다."
-        format.html { redirect_to '/register/new' }
-      else
-        flash[:error] = "잘못된 곳을 확인해주세요"
-        format.html { render :new }
-        format.json { render json: @team.errors }
-      end
+    if @team.save
+      flash[:success] = "성공적으로 등록되었습니다."
+      redirect_to '/register/new'
+    else
+      render :new
     end
   end
-  def search
-  end
-
-  def result
-  end
+  #TODO 수정할 수 있게 그리고 등록된 팀들을 다 볼 수 있게 하자?
 
   private
     def team_params

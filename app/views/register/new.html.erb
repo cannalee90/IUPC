@@ -6,6 +6,7 @@
 <div class="container content">
   <div class = "row">
     <div class = "col-md-8 col-md-offset-2">
+      <%= form_errors(@team) %>
       <%= render partial: "shared/flash_messages", flash: flash %>
       <div class = "tag-box tag-box-v3">
         <div class="row promo-service">
@@ -15,18 +16,19 @@
             </div>
               <ul class="list-unstyled margin-bottom-40">
                 <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>이메일 주소 및 핸드폰 번호는 대회 안내를 위해 사용합니다.</li>
-                <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>한글 이름과 학번은 올바른 IT공대 학생인지 확인하기 위해 이용합니다.</li>
+                <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>한글 이름과 학번은 등록 조건을 확인하기 위해 이용합니다.</li>
                 <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>잘못된 정보를 기재시 불이익이 발생 할 수 있습니다.</li>
                 <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>입력하신 개인정보는 5월 29일 까지 보관되며 그 이후 파기합니다.</li>
+                <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>부적절한 팀 이름은 이름이 수정될 수 있습니다.</li>
               </ul>
             <div class = "headline">
               <h2>팀 등록하기</h2>
             </div>
           </div>
-          <%= form_for(@team, url: '/register/create', method: 'post') do |f| %>
+          <%= form_for(@team, url: '/register/', method: 'post') do |f| %>
             <div class = "col-md-12">
               <div class="form-group">
-                <%= f.text_field :name, placeholder: "팀 이름을 입력하세요. 알파벳, 공백 숫자 조합만 가능합니다.", class: "form-control register" %>
+                <%= f.text_field :name, placeholder: "팀 이름을 입력하세요. 알파벳, 숫자 조합만 가능합니다.", class: "form-control register" %>
               </div>
             </div>
             <%= f.fields_for :participants do |p|%>
