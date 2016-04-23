@@ -58,51 +58,45 @@
               <li><%=link_to "FAQ", "/faq/main"%></li>
               <!-- Board -->
               <li><%=link_to "공지사항", "/announces"%></li>
-              <!-- Shortcodes -->
+              <!-- Announce -->
               <li><a href="javascript:popupOpen();" >등록하기</a></li>
               <li><%=link_to "게시판", "/posts"%></li>
-              <!-- End Shortcodes -->
+              <!-- posts -->
+              <li><%=link_to "문제예시", 'https://www.acmicpc.net/category/detail/1422', target: '_blank'%></li>
+              <!-- Last Problem -->
 
-              <!-- Misc Pages -->
-              <li class = "dropdown">
+              <!-- <li class = "dropdown">
                 <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
                     문제예시
                 </a>
                 <ul class="dropdown-menu">
-                  <!-- Invoice Page -->
-                  <li><%=link_to "문제 A", "/problem/A" %></li>
-                  <li><%=link_to "문제 B", "/problem/B" %></li>
-                  <li><%=link_to "문제 C", "/problem/C" %></li>
-                  <li><%=link_to "문제 D", "/problem/D" %></li>
+                  <li><%#=link_to "문제 A", "/problem/A", target: "_blank" %></li>
+                  <li><%#=link_to "문제 B", "/problem/B" %></li>
+                  <li><%#=link_to "문제 C", "/problem/C" %></li>
+                  <li><%#=link_to "문제 D", "/problem/D" %></li>
 
-                  <!-- Sub Level Menu -->
                 </ul>
-              </li>
-                <!-- End Misc Pages -->
+              </li> -->
             </ul>
           </div><!--/end container-->
         </div><!--/navbar-collapse-->
       </div>
     <article>
       <%= yield %>
-    </article
-    <!--=== Footer Version 1 ===-->
-      <div class="footer-v1">
-        <div class="copyright">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <p>
-                    2015 CTP &copy; All Rights Reserved.
-                   <!-- <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> -->
-                </p>
-              </div>
+    </article>
+    <div class="footer-v1">
+      <div class="copyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p>
+                2016 CTP &copy; All Rights Reserved.
+              </p>
             </div>
           </div>
-        </div><!--/copyright-->
-      </div>
-    </div>    
-    <!--=== End Footer Version 1 ===-->
+        </div>
+      </div><!--/copyright-->
+    </div>
   </body>
 </html>
 <script type="text/javascript">
@@ -110,4 +104,3 @@ function popupOpen(){
 		alert("등록이 마감되었습니다");
 	}
 </script>
-

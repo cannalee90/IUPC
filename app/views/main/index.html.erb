@@ -42,11 +42,10 @@
       <h2>상금</h2>
     </div>
     <ul class="list-unstyled margin-bottom-15">
-      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>대상 : 총장상 및 상금 50만원</li>
-      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>금상 : 총장상 및 상금 30만원</li>
-      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>은상 : 총장상 및 상금 20만원</li>
-      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>동상 : 총장상 및 상금 10만원</li>
-      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>수상팀을 제외하고 나머지 팀들 중 추첨을 통해 문화상품권이 수여됩니다.</li>
+      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>대상 : 총장상 및 상금 미정</li>
+      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>금상 : 총장상 및 상금 미정</li>
+      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>은상 : 총장상 및 상금 미정</li>
+      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>동상 : 총장상 및 상금 미정</li>
     </ul>
   </div>
   <div class="col-md-6 md-margin-bottom-20">
@@ -54,10 +53,10 @@
       <h2>대회 일정</h2>
     </div>
     <ul class="list-unstyled margin-bottom-15">
-      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i><strong>참가신청</strong> : 2015년 11월 8일 PM 11:59까지</li>
+      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i><strong>참가신청</strong> : 2016년 5월 15일 PM 11:59까지</li>
       <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i><strong>예비소집</strong> : TBA(미 참가시 불이익이 있을 수 있습니다)</li>
-      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i><strong>본　대회</strong> : 2015년 11월 28일 AM 10:00 ~ PM 17:00 (점심식사 제공)</li>
-      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i><strong>대회장소</strong> : 인하대학교(세부 장소는 추후 공지)</li>
+      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i><strong>본　대회</strong> : 2016년 5월 28일 13:00 ~ 18:00 (점심식사 제공)</li>
+      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i><strong>대회장소</strong> : 인하대학교(하이테크관)</li>
       <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>대회는 5시간 동안 진행되며, 대회가 끝난 후 문제 설명 및 시상식이 있을 예정입니다.</li>
     </ul>
   </div>
@@ -67,7 +66,8 @@
     </div>
     <ul class="list-unstyled margin-bottom-15">
       <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>각 팀은 <b>반드시 1대의 컴퓨터</b>를 지참해서 사용해야 합니다.</li>
-      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>대상 및 금상 수상자는 2회 <strong>IUPC</strong> 출전이 제한됩니다.</li>
+      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>1회 대상 및 금상 수상자는 2회 <strong>IUPC</strong> 출전이 제한됩니다.</li>
+      <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>대상 및 금상 수상자는 3회 <strong>IUPC</strong> 출전이 제한됩니다.</li>
       <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>정해진 사이트 이외의 인터넷 사용은 부정행위로 간주됩니다.</li>
       <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>팀 멤버 모두 대회당일 학생증을 지참해야 합니다.</li>
       <li><i class="fa fa-chevron-circle-right color-green margin-right-5"></i>허위 정보를 기재시 응시자격 박탈의 불이익을 받을 수 있습니다.</li>
@@ -77,15 +77,13 @@
     <div class = "headline">
       <h2>주최 및 후원</h2>
     </div>
-    <a href = "http://cse.inha.ac.kr/"><img class = "support-logo" src = "image/inha-logo.png" ></a>
-    <a href = "https://zoyi.co/"><img class = "support-logo" src = "image/zoyi-logo.png"></a>
-    <a href = "http://www.acmicpc.net/"><img class = "support-logo" src = "image/boj-logo.png"  ></a>
-    <img class = "support-logo"  src = "image/ctp_large_logo.png">
+    <%= link_to 'http://cse.inha.ac.kr/', target: '_blank' do %>
+      <%= image_tag 'inha-logo.png', class: 'support-logo' %>
+    <% end %>
+    <%= link_to 'http://icpc.me', target: '_blank' do %>
+      <%= image_tag 'baekjoon_online_judge.png', class: 'support-logo' %>
+    <% end %>
+    <%= image_tag 'ctp_large_logo.png', class: 'support-logo' %>
   </div>
 </div>
     <!-- End Service Block -->
-</div>
-<hr class="margin-bottom-40">
-<!-- End Content Part -->
-
-</div><!--/wrapper-->

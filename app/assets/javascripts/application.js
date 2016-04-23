@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require unify/plugins/jquery/jquery.min.js
 //= require unify/plugins/jquery/jquery-migrate.min.js
 //= require unify/plugins/bootstrap/js/bootstrap.min.js
@@ -25,10 +24,3 @@
 //= require unify/js/app.js
 //= require unify/js/plugins/layer-slider.js
 //= require summernote
-
-
-
-
-
-
-
