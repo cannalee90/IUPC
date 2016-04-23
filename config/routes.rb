@@ -1,35 +1,32 @@
 Rails.application.routes.draw do
-  get 'teamlist/index'
+  root 'main#index'
+  get 'main/faq'
+
   resources :posts do
     resources :comments, only: [:create, :destroy]
   end
-  
+
+  resources :register, only: [:new, :create] do
+    collection do
+      get 'result'
+    end
+  end
   devise_for :users
   resources :announces
   resources :posts
   get 'posts/get_pass/:id' => 'posts#get_pass',  as: 'posts_pass'
 
-  get 'problem/A'
-  get 'problem/B'
-  get 'problem/C'
-  get 'problem/D'
-  
-  get 'register/new'
-  post 'register/create'
   get 'register/result'
-  
+  get 'teamlist/index'
+
   get 'teamlist/new'
-  post 'teamlist/create'
   get 'teamlist/sendtest'
   get 'teamlist/selectmessage'
   get 'teamlist/selectsender'
-  post 'teamlist/sendmessage'
   get 'teamlist/table'
-  
-  
-  root 'main#index'
-  get 'faq/main'
-  
+  post 'teamlist/create'
+  post 'teamlist/sendmessage'
+
   scope module: 'teamlist' do
     resources :messages
   end
@@ -38,7 +35,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # 
+  #
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

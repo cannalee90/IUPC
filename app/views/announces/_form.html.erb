@@ -1,25 +1,14 @@
+<div id = "errors_container">
+  <%= form_errors(@announce) %>
+</div>
 <%= form_for(@announce) do |f| %>
-  <% if @announce.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@announce.errors.count, "error") %> prohibited this announce from being saved:</h2>
-
-      <ul>
-      <% @announce.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.text_field :title, class: "form-control", placeholder: "제목" %>
   </div>
   <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, class: "form-control", placeholder: "내용",  size: "20x10" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "글쓰기", class: "btn-u"%>
   </div>
 <% end %>

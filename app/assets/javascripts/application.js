@@ -24,3 +24,11 @@
 //= require unify/js/app.js
 //= require unify/js/plugins/layer-slider.js
 //= require summernote
+//= require_self
+
+$(document).ready(function() {
+  $('#announce_content').summernote({
+    lang: 'ko-KR',
+    height: '400'
+  });
+});
