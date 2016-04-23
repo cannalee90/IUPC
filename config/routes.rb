@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'main/faq'
 
   resources :posts do
+    member do
+      post 'edit'
+    end
     resources :comments, only: [:create, :destroy]
   end
 

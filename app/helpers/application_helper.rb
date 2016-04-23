@@ -34,7 +34,7 @@ module ApplicationHelper
   def form_errors(model)
     return unless  model.errors.any?
     puts model.errors.inspect
-    headline   = "제출하신 정보에 #{model.errors.count}개의 문제가 있습니다:"
+    headline   = "입력에 #{model.errors.count}개의 문제가 있습니다:"
     content_tag(:div, class: 'alert alert-danger', id: 'error_explanation') do
       content_tag(:h4, headline) <<
       content_tag(:ul) do

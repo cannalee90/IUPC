@@ -1,24 +1,69 @@
+<%= render partial: 'shared/breadcrum', locals: {menu: "게시판"} %>
 <div class="container content">
-  <div class = "row">
+  <div class="row">
     <div class = "col-md-8 col-md-offset-2">
       <%= render partial: "shared/flash_messages", flash: flash %>
-      <div class = "tag-box tag-box-v3">
-        <h1 class="blog-grid-title-lg"><%= @post.title %></h1>
-        <hr class="margin-bottom-20">
-        <pre class = "blog-body"><%= @post.content %></pre>
-        <%= link_to '삭제', posts_pass_path(@post),  class: 'btn btn-default'%>
-        <%= link_to '수정', edit_post_path(@post), class: 'btn btn-default'%>
-        <%= link_to '목록', posts_path, class: 'btn btn-default'%>
-        <%if @post.comments.count > 0 %>
-          <div class = "margin-bottom-20"></div>
-          <%= render partial: "shared/comment" %>
-        <%end%>  
-        <%if user_signed_in? %>
-          <div class = "margin-bottom-20"></div>
-          <%= render partial: "shared/new_comment" %>
-        <%end%>
+
+      <div class="panel-group acc-v1 margin-bottom-40">
+        <div class="panel panel-default post-panel">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <span class="accordion-toggle">
+                <%= @post.title %>
+              </span>
+            </h4>
+          </div>
+          <div class="panel-collapse collapse in">
+            <div class="panel-body post-body">
+              <%= simple_format(@post.content.html_safe) %>
+            </div>
+          </div>
+        </div>
       </div>
+      <%= link_to '목록', posts_path, class: "btn-u" %>
+      <button type="button" class="btn-u" data-toggle ="modal" data-target = ".bs-modify-modal-sm">수정</button>
+      <button type="button" class="btn-u" data-toggle ="modal" data-target = ".bs-destroy-modal-sm">삭제</button>
     </div>
   </div>
 </div>
 
+<div class="modal fade bs-destroy-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none;">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				<h4 id="myLargeModalLabel3" class="modal-title">비밀번호</h4>
+			</div>
+      <%= form_tag(post_path(@post.id), method: :delete) do %>
+  			<div class="modal-body">
+          <%= password_field_tag 'password', nil, class: "form-control" %>
+    		</div>
+        <div class="modal-footer">
+          <button type="button" class="btn-u btn-u-default" data-dismiss="modal">Close</button>
+          <%= submit_tag "삭제하기", class: "btn-u" %>
+        </div>
+      <%end%>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade bs-modify-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" style="display: none;">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				<h4 id="myLargeModalLabel3" class="modal-title">비밀번호</h4>
+			</div>
+      <%= form_tag(edit_post_path(@post.id), method: :post) do %>
+  			<div class="modal-body">
+          <%= password_field_tag 'password', nil, class: "form-control" %>
+    		</div>
+        <div class="modal-footer">
+          <button type="button" class="btn-u btn-u-default" data-dismiss="modal">Close</button>
+          <%= submit_tag "수정하기", class: "btn-u" %>
+        </div>
+      <%end%>
+		</div>
+	</div>
+</div>

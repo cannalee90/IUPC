@@ -1,3 +1,4 @@
+<%= render partial: 'shared/breadcrum', locals: {menu: "게시판"} %>
 <div class="container content">
   <div class="row">
     <div class = "col-md-8 col-md-offset-2">
@@ -7,24 +8,24 @@
           <thead>
             <tr>
               <th class = "col-md-9 text-center">제목</th>
-              <th class = "col-md-2 text-center">등록일</th>
+              <th class = "col-md-2 hidden-sm text-center">등록일</th>
             </tr>
           </thead>
           <tbody>
-            <%@posts.reverse.each do |p| %>
+            <%@posts.reverse.each do |post| %>
               <tr>
-                <td class = "col-md-9 "><%=link_to p.title, post_path(p)%>
-                  <%if p.comments.count > 0%>
-                    <button class = "btn btn-xs btn-success btn-reply">답변</button>
-                  <%end%>
+                <td class = "col-md-9 ">
+                  <%= link_to post.title, post_path(post) %>
                 </td>
-                <td class = "col-md-2 text-center"><%=  time_ago_in_words(p.created_at)%> 전</td>
+                <td class = "col-md-2 hidden-sm text-center">
+                  <%= post.created_at.strftime("%m-%d") %>
+                </td>
               </tr>
             <%end%>
           </tbody>
         </table>
       </div>
-      <%= link_to '글쓰기', new_post_path, class: 'btn-u'%>
+      <%= link_to "글쓰기", new_post_path, class: "btn-u" %>
     </div>
   </div>
 </div>

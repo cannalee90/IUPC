@@ -13,6 +13,12 @@ ko:
         name: 참가자
         sn: 학번
         phone: 핸드폰번호
+      post:
+        title: 제목
+        content: 내용
+        password: 비밀번호
+        name: 이름
+
     errors:
       headline: 팀원 등록에 문제가 있습니다
       messages:
