@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  
-  devise_for :teams, ActiveAdmin::Devise.config
+
   ActiveAdmin.routes(self)
   root 'main#index'
   get 'main/faq'

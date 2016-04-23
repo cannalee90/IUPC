@@ -232,6 +232,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
+    tinymce-rails (4.3.8)
+      railties (>= 3.1.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
@@ -269,6 +271,7 @@ DEPENDENCIES
   sqlite3
   summernote-rails
   therubyracer
+  tinymce-rails
   uglifier (>= 1.3.0)
 
 BUNDLED WITH

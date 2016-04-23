@@ -4,7 +4,7 @@ ko:
       team: 팀
       participant: 참가자
       post: 게시글
-      announce: 문제
+      announce: 공지사항
     attributes:
       team:
         name: 팀이름

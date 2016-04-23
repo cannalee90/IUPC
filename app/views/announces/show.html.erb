@@ -1,15 +1,25 @@
+<%= render 'breadcrum' %>
 <div class="container content">
-  <div class = "row">
-    <div class = "col-md-8 col-md-offset-2">
-      <%= render partial: "shared/flash_messages", flash: flash %>
-      <div class = "tag-box tag-box-v3">
-        <h1 class="blog-grid-title-lg"><%= @announce.title %></h1>
-        <hr class="margin-bottom-20">
-        <%= @announce.content.html_safe %>
-        <hr class="margin-bottom-20">
-        <%= link_to '목록', announces_path, class: 'btn btn-default'%>
+  <div class="row">
+    <div class = "col-md-10 col-md-offset-1">
+      <div class="panel-group acc-v1 margin-bottom-40">
+        <div class="panel panel-default post-panel">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <span class="accordion-toggle">
+                <%= @announce.title %>
+              </span>
+            </h4>
+          </div>
+          <div class="panel-collapse collapse in">
+            <div class="panel-body post-body">
+              <%= @announce.content.html_safe %>
+            </div>
+          </div>
+        </div>
       </div>
+      <%= link_to '목록보기', announces_path, class: "btn-u" %>
+
     </div>
   </div>
 </div>
-

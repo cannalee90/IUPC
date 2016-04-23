@@ -24,7 +24,6 @@
  *= require unify/plugins/line-icons/line-icons.css
  *= require unify/plugins/font-awesome/css/font-awesome.min.css
  *= require unify/plugins/bootstrap/css/bootstrap.min.css
-
  */
 @import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 @import "font-awesome-sprockets";
@@ -45,5 +44,22 @@ pre.blog-body {
 
 
 table > tr, th > th, td {
-padding: 5px 15px;
+  padding: 5px 15px;
+  a {
+    font-size: 10pt;
+    color: black;
+  }
+}
+
+.acc-v1 .panel-heading span {
+  display: block;
+  font-size: 14pt;
+  padding:  20px 15px;
+  background: #fefefe;
+}
+
+.post-body {
+  p {
+    font-size: 10pt;
+  }
 }

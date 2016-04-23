@@ -25,9 +25,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 #cool-sms
 gem 'coolsms'
+gem 'tinymce-rails'
 
 gem 'figaro'
-
 gem 'mysql2', '~> 0.3.18'
 gem 'devise'
 # Use Unicorn as the app server
