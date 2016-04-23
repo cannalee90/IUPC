@@ -1,11 +1,9 @@
 class RegisterController < ApplicationController
-  #before_action :set_post, only: [:create]
-  before_action :authenticate_user!
   
   def new
     @team = Team.new
     @tmp = 0
-    3.times {@team.participants.build}    
+    3.times {@team.participants.build}
   end
 
   def create
