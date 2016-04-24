@@ -1,0 +1,23 @@
+<div class="media">
+  <h3>답변</h3>
+  <hr class= "margin-bottom-20">
+  <% @post.comments.each do |comment| %>
+    <div class="media-body margin-bottom-20">
+      <%= simple_format (comment.content) %>
+      <%= deleteSpan(comment) %>
+    </div>
+    <hr class= "margin-bottom-10">
+  <% end %>
+</div>
+<% if is_admin? %>
+  <div class="row margin-bottom-20">
+    <%= form_for [@post, @post.comments.build] do |f| %>
+      <div class="col-md-12 margin-bottom-10">
+        <%= f.text_area :content, class: "form-control", rows: "4" %>
+      </div>
+      <div class="col-md-12">
+        <%= f.submit "답변하기", class: "btn-u" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

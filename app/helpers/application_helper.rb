@@ -16,6 +16,10 @@ module ApplicationHelper
     end
   end
 
+  def is_admin?
+    true if current_user.present? && current_user.admin?
+  end
+  
   def bootstrap_class_for(flash_type)
     case flash_type
     when "success"

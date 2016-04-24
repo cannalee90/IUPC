@@ -17,6 +17,7 @@
               <tr>
                 <td class = "col-md-8 col-sm-10 col-xs-8">
                   <%= link_to post.title, post_path(post) %>
+                  <%= completed?(post)%>
                 </td>
                 <td class = "col-md-2 col-sm-2 col-xs-4 text-center">
                   <%= link_to post.title, post_path(post) %>

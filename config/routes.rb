@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     member do
       post 'edit'
     end
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: [:create, :destroy], shallow: true
   end
 
   resources :register, only: [:new, :create] do
