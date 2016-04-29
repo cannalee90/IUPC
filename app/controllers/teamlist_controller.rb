@@ -1,12 +1,12 @@
 class TeamlistController < ApplicationController
   before_action :authenticate_user!
   def index
+    coolsend = Coolsms::SendKangho.new( { type: "LMS", subject: "IUPC 운영진입니다."} )
+    puts coolsend.send("01026772637", "01026772637", "hihi")
+
     @teams = Team.all
   end
 
-  def new
-    @message = Message.new
-  end
 
 
   def sendtest

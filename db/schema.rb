@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423130915) do
+ActiveRecord::Schema.define(version: 20160429191940) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -74,6 +74,16 @@ ActiveRecord::Schema.define(version: 20160423130915) do
     t.string   "password_digest", limit: 255
   end
 
+  create_table "sms_trackers", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "message_id", limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "sms_trackers", ["message_id"], name: "index_sms_trackers_on_message_id", using: :btree
+  add_index "sms_trackers", ["user_id"], name: "index_sms_trackers_on_user_id", using: :btree
+
   create_table "teams", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
@@ -101,4 +111,6 @@ ActiveRecord::Schema.define(version: 20160423130915) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "participants", "teams"
+  add_foreign_key "sms_trackers", "messages"
+  add_foreign_key "sms_trackers", "users"
 end

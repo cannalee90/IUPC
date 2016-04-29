@@ -4,4 +4,4 @@ $COOLSMS_SEND = Coolsms::SMS::Send.new({
 })
 $COOLSMS_BALANCE = Coolsms::SMS::Balance.new
 $COOLSMS_STATUS = Coolsms::SMS::Status.new()
-$COOLSMS_SENT = Coolsms::SMS::Sent.new()
+$COOLSMS_SENT = Coolsms::SMS::Sent.new( count: 10000 )

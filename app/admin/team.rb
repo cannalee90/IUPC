@@ -1,17 +1,23 @@
 ActiveAdmin.register Team do
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
+  collection_action "sms", :method=>:get, action: :sms do
 
+  end
+
+  controller do
+    def sms
+      @teams = Team.all
+    end
+  end
+
+  permit_params :name
+
+
+  index do
+    # Note the addition of index_table class.
+    table_for(Team.all, class: 'index_table') do
+      column "Product Name", :name
+    end
+  end
 
 end
