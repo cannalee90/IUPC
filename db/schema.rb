@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160429191940) do
+ActiveRecord::Schema.define(version: 20160430183741) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -77,8 +77,9 @@ ActiveRecord::Schema.define(version: 20160429191940) do
   create_table "sms_trackers", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.integer  "message_id", limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "group_id",   limit: 255
   end
 
   add_index "sms_trackers", ["message_id"], name: "index_sms_trackers_on_message_id", using: :btree

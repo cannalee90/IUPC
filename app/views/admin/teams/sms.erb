@@ -1,0 +1,75 @@
+<div id="main_content_wrapper">
+  <div id="main_content">
+    <%= form_tag "/admin/teams/sending", method: "post" %>
+      <input name="utf8" type="hidden" value="✓">
+      <div class="table_tools">
+        <div class="buttons">
+          <input type="submit" name="commit" value="문자보내기">
+          <%= select(:message, :message_id, Message.all.collect {|message| [ message.title, message.id ] }, { include_blank: true }) %>
+        </div>
+      </div>
+      <div class="paginated_collection">
+        <div class="paginated_collection_contents">
+          <div class="index_content">
+            <div class="index_as_table">
+              <table border="0" cellspacing="0" cellpadding="0" id="index_table_teams" class="index_table index" paginator="true">
+                <thead>
+                  <tr>
+                    <th class="col col-selectable">
+                      <div class="resource_selection_toggle_cell">
+                        <input type="checkbox" id="collection_selection_toggle_all" name="collection_selection_toggle_all" class="toggle_all">
+                      </div>
+                    </th>
+
+                    <th class="sortable sorted-desc col col-id"><a href="/admin/teams?order=id_asc">이름</a></th>
+                    <th class="sortable col col-name"><a href="/admin/teams?order=name_desc">번호</a></th>
+                    <th class="sortable col col-name"><a href="/admin/teams?order=name_desc">상태</a></th>
+
+                    <!-- <th class="sortable col col-created_at"><a href="/admin/teams?order=created_at_desc">Created At</a></th>
+                    <th class="sortable col col-updated_at"><a href="/admin/teams?order=updated_at_desc">Updated At</a></th>
+                    <th class="col col-actions"></th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @participants.each do |participant| %>
+                    <tr class="odd" id="team_1">
+                      <td class="col col-selectable">
+                        <div class="resource_selection_cell">
+                          <input type="checkbox" id="batch_action_item_1" value="<%=participant.id %>" class="collection_selection" name="collection_selection[]">
+                        </div>
+                      </td>
+                      <td class="col col-name">
+                        <%= participant.name %>
+                      </td>
+                      <td class="col col-name">
+                        <%= participant.phone %>
+                      </td>
+                      <td class="col col-name">
+                      </td>
+                      <!-- <td class="col col-actions">
+                        <div class="table_actions">
+                          <a class="view_link member_link" href="/admin/teams/1">보기</a>
+                          <a class="edit_link member_link" href="/admin/teams/1/edit">수정</a>
+                          <a class="delete_link member_link" data-confirm="정말로 삭제 하시겠습니까?" rel="nofollow" data-method="delete" href="/admin/teams/1">삭제</a>
+                        </div>
+                      </td> -->
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div id="index_footer">
+          <div class="pagination_information"><b>1</b>개 팀 표시중</div>
+          <div class="download_links">
+            <span>다운로드:</span>
+            <a href="/admin/teams.csv">CSV</a>
+            <a href="/admin/teams.xml">XML</a>
+            <a href="/admin/teams.json">JSON</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
