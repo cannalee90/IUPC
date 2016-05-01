@@ -13,7 +13,7 @@ set :output, "/home/ubuntu/IUPC/shared/log/cron_log.log"
 #   rake "some:great:rake:task"
 # end
 #
-every 1.minutes do
+every 10.minutes do
   rake 'whenever'
 end
 
