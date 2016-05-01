@@ -14,7 +14,7 @@ set :output, "/home/ubuntu/IUPC/shared/log/cron_log.log"
 # end
 #
 every 1.minutes do
-  rake 'whatever'
+  rake 'whenever'
 end
 
 every 1.hours do
