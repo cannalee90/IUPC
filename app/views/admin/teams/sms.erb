@@ -46,7 +46,9 @@
                       </td>
                       <td class="col col-name">
                         <% participant.smsTrackers.each do |tracker| %>
-                         <%= labeling (tracker.status) %>
+                          <%= link_to admin_message_path(tracker.message_id), class: "view_link" do %>
+                            <%= labeling (tracker.status) %>
+                          <% end %>
                         <% end %>
                       </td>
                     </tr>
