@@ -30,6 +30,7 @@ gem 'tinymce-rails'
 gem 'figaro'
 gem 'mysql2', '~> 0.3.18'
 gem 'devise'
+gem 'whenever'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

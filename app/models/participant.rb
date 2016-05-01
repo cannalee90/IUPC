@@ -10,4 +10,7 @@ class Participant < ActiveRecord::Base
                     format: { with: VALID_SN_REGEX }
   validates :phone, presence: true, uniqueness: true,
                     format: { with: VALID_PHONE_REGEX }
+
+  has_many :smsTrackers
+  has_many :messages, through: :smsTrackers
 end

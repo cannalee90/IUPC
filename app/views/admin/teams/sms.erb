@@ -45,14 +45,10 @@
                         <%= participant.phone %>
                       </td>
                       <td class="col col-name">
+                        <% participant.smsTrackers.each do |tracker| %>
+                         <%= labeling (tracker.status) %>
+                        <% end %>
                       </td>
-                      <!-- <td class="col col-actions">
-                        <div class="table_actions">
-                          <a class="view_link member_link" href="/admin/teams/1">보기</a>
-                          <a class="edit_link member_link" href="/admin/teams/1/edit">수정</a>
-                          <a class="delete_link member_link" data-confirm="정말로 삭제 하시겠습니까?" rel="nofollow" data-method="delete" href="/admin/teams/1">삭제</a>
-                        </div>
-                      </td> -->
                     </tr>
                   <% end %>
                 </tbody>
@@ -62,13 +58,7 @@
         </div>
 
         <div id="index_footer">
-          <div class="pagination_information"><b>1</b>개 팀 표시중</div>
-          <div class="download_links">
-            <span>다운로드:</span>
-            <a href="/admin/teams.csv">CSV</a>
-            <a href="/admin/teams.xml">XML</a>
-            <a href="/admin/teams.json">JSON</a>
-          </div>
+          <div class="pagination_information"><b><%= @participants.size %></b>개 지원자 표시중</div>
         </div>
       </div>
   </div>

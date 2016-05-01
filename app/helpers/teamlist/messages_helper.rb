@@ -1,2 +1,0 @@
-module Teamlist::MessagesHelper
-end
