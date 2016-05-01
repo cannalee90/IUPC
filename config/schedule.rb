@@ -17,7 +17,7 @@ every 10.minutes do
   rake 'whenever'
 end
 
-every 1.hours do
+every 1.days do
   rake 'daily_notice'
 end
 
