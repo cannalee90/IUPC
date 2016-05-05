@@ -35,6 +35,4 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
-  ENV['COOLSMS_KEY'] = "NCS563B1211B3335";
-  ENV['COOLSMS_SECRET_KEY'] = "559714F94935678B5A0368A945D6C80D";
 end

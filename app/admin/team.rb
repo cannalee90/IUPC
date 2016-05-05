@@ -31,7 +31,7 @@ ActiveAdmin.register Team do
 
     def send_sms(receiver, message)
       coolsend = Coolsms::SendKangho.new( { type: "LMS", subject: "IUPC 운영진입니다."} )
-      ret = coolsend.send("01026772637", receiver.phone, message.content)
+      ret = coolsend.send("01068586821", receiver.phone, message.content)
       puts ret
       SmsTracker.create(participant_id: receiver.id, message_id: message.id, group_id: ret[:group_id], status: -1)
     end

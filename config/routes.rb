@@ -16,7 +16,10 @@ Rails.application.routes.draw do
       get 'result'
     end
   end
-  devise_for :users
+  devise_for :users,  controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
   resources :announces
   resources :posts
   get 'posts/get_pass/:id' => 'posts#get_pass',  as: 'posts_pass'

@@ -9,5 +9,6 @@
 
  task daily_notice: :environment do
    ret = $COOLSMS_BALANCE.balance
-   $COOLSMS_SEND.send("01026772637", "01026772637", "#{ret[:message]['cash']}의 비용이 남았습니다.")
+   $COOLSMS_SEND.send("01068586821", "01026772637", "#{ret[:message]['cash']}의 비용이 남았습니다.")
+
  end
