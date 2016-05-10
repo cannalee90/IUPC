@@ -1,5 +1,5 @@
 ActiveAdmin.register Team do
-
+  config.per_page = 200
   collection_action "sms", :method=>:get, action: :sms do
   end
   collection_action "sending", :method=>:post, action: :sending do
@@ -7,6 +7,10 @@ ActiveAdmin.register Team do
 
 
   controller do
+    def scoped_collection
+      super.includes(:participants)
+    end
+
     def sms
       @participants = Participant.all
     end
@@ -39,6 +43,13 @@ ActiveAdmin.register Team do
 
   permit_params :name
 
-
+  index do |team|
+    column :name
+    column "참가자" do |team|
+      team.participants.map do |p|
+        p.naming
+      end.join('</br>').html_safe
+    end
+  end
 
 end
