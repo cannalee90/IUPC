@@ -14,14 +14,14 @@ class Participant < ActiveRecord::Base
             :majors,
             presence: true
 
-  has_many :smsTrackers
+  has_many :smsTrackers, dependent: :destroy
   has_many :messages, through: :smsTrackers
 
   def naming
     unless major.nil?
       name + "(#{self.sn})" +" #{major} "
     else
-      name + "(#{self.sn})" 
+      name + "(#{self.sn})"
     end
   end
 
