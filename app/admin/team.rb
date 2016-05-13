@@ -1,4 +1,8 @@
 ActiveAdmin.register Team do
+
+
+  permit_params :name
+  
   config.per_page = 200
   collection_action "sms", :method=>:get, action: :sms do
   end
@@ -49,6 +53,13 @@ ActiveAdmin.register Team do
       team.participants.map do |p|
         p.naming
       end.join('</br>').html_safe
+    end
+    actions
+  end
+
+  form do |f|
+    f.inputs do
+      f.input :name
     end
     actions
   end

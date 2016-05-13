@@ -31,6 +31,9 @@ gem 'figaro'
 gem 'mysql2', '~> 0.3.18'
 gem 'devise'
 gem 'whenever'
+gem 'paper_trail'
+
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
