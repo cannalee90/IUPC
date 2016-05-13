@@ -15,7 +15,7 @@ class Participant < ActiveRecord::Base
             :majors,
             presence: true
 
-  after_save :send_sms
+  after_create :send_sms
 
   has_many :smsTrackers, dependent: :destroy
   has_many :messages, through: :smsTrackers
