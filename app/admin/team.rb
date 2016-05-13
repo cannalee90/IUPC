@@ -50,6 +50,7 @@ ActiveAdmin.register Team do
         p.naming
       end.join('</br>').html_safe
     end
+    actions
   end
 
 end
