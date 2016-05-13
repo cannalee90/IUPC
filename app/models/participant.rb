@@ -15,6 +15,8 @@ class Participant < ActiveRecord::Base
             :majors,
             presence: true
 
+  after_save :send_sms
+
   has_many :smsTrackers, dependent: :destroy
   has_many :messages, through: :smsTrackers
 
@@ -38,4 +40,10 @@ class Participant < ActiveRecord::Base
        문화콘텐츠학과 문화경영학과 소비자학과 식품영양학과 아동학과 의류디자인학과
        의예과 간호학과 미술 시각정보 디자인스포츠과학 연극영화)
    end
+
+   def send_sms
+     welcome_msg = "IUPC 운영진입니다. 팀 등록이 완료되었습니다. 예비소집일은 추후 공지해드리며 불참시 불이익이 있을 수 있습니다."
+     $COOLSMS_SEND.send("01068586821", self.phone, welcome_msg)
+   end
+
 end
