@@ -20,7 +20,7 @@ ActiveAdmin.register Participant do
       f.input :email
       f.input :phone
       f.input :sn
-      f.input :team_id
+      f.input :team_id, as: :select, collection: Team.all.map{|team| [team.name, team.id] }
       f.input :major, as: :select, collection: resource.majors.map {|major| [major, major] }
     end
     actions
