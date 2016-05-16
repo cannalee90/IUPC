@@ -42,8 +42,12 @@ class Participant < ActiveRecord::Base
    end
 
    def send_sms
-     welcome_msg = "IUPC 운영진입니다. #{self.name}님의 팀 등록이 완료되었습니다. 예비소집일은 추후 공지해드리며 불참시 불이익이 있을 수 있습니다."
-     $COOLSMS_SEND.send("01068586821", self.phone, welcome_msg)
+
+     welcome_msg = "IUPC 운영진입니다. #{self.name}님의 등록이 완료되었습니다. 예비소집일은 추후 공지해드리며 불참시 불이익이 있을 수 있습니다."
+     coolsend = Coolsms::SendKangho.new( { type: "LMS", subject: "IUPC 운영진입니다."} )
+     ret = coolsend.send("01068586821", self.phone, welcome_msg)
+     SmsTracker.create(participant_id: self.id, group_id: ret[:group_id], status: -1, message_id: 1)
+
    end
 
 end
