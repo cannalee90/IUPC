@@ -20,7 +20,7 @@
                   <%= completed?(post)%>
                 </td>
                 <td class = "col-md-2 col-sm-2 col-xs-4 text-center">
-                  <%= link_to post.title, post_path(post) %>
+                  <%= link_to post.name, post_path(post) %>
                 </td>
                 <td class = "col-md-2 hidden-sm text-center">
                   <%= post.created_at.strftime("%m-%d") %>
